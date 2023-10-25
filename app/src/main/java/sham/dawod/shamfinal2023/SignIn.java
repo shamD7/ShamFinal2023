@@ -3,7 +3,7 @@ package sham.dawod.shamfinal2023;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+public class SignIn extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
