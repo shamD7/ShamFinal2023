@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".SignIn">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="221dp"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp">
 
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
                 android:hint="E-mail / Username" />
         </android.support.design.widget.TextInputLayout>
 
@@ -30,6 +32,7 @@
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="#00DDCFCF"
                 android:hint="password" />
         </android.support.design.widget.TextInputLayout>
 
@@ -37,14 +40,14 @@
             android:id="@+id/btnSignIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#6BE8E8"
+            android:backgroundTint="#DF2424"
             android:text="SIGN IN " />
 
         <Button
             android:id="@+id/btnSighUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#6BE8E8"
+            android:backgroundTint="#DF2424"
             android:text="SIGN UP" />
 
     </LinearLayout>
