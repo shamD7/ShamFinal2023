@@ -17,12 +17,11 @@ public class SignIn extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sign_up);
         setContentView(R.layout.sign_in);
-        etEmail= findViewById(R.id.etEmail);
+        etEmail= findViewById(R.id.etEmailO);
         etPassword=findViewById(R.id.etPassword);
-        btnSighIn=(Button) findViewById(R.id.btnSignIn);
-        btnSighUp=(Button) findViewById(R.id.btnSighUp);
+        btnSighIn= findViewById(R.id.btnSignIn);
+        btnSighUp=findViewById(R.id.btnSighUp);
 
     }
 }
