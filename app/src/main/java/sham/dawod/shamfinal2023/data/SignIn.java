@@ -1,5 +1,6 @@
-package sham.dawod.shamfinal2023;
+package sham.dawod.shamfinal2023.data;
 
+import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,38 +8,48 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class SignUp extends AppCompatActivity
+import sham.dawod.shamfinal2023.R;
+import sham.dawod.shamfinal2023.SignUp;
+
+public class SignIn extends AppCompatActivity
 {
     private TextInputEditText etEmail;
     private TextInputEditText etPassword;
-    private TextInputEditText etRepassword;
-    private TextInputEditText etName;
-    private TextInputEditText etPhone;
-    private TextInputEditText etLocation;
-    private Button btnSAVE;
-    private Button btnCancel;
+    private Button btnSighIn;
+    private Button btnSighUp;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.sign_up);
-        etEmail=(TextInputEditText) findViewById(R.id.etEmail);
-        etPassword=(TextInputEditText)findViewById(R.id.etPassword);
-        etName=(TextInputEditText)findViewById(R.id.etName);
-        etPhone=(TextInputEditText)findViewById(R.id.etPhone);
-        btnSAVE=(Button) findViewById(R.id.btnSAVE);
-        btnCancel=(Button) findViewById(R.id.btnCancel);
-
+        setContentView(R.layout.sign_in);
+        etEmail= findViewById(R.id.etEmail);
+        etPassword=findViewById(R.id.etPassword);
+        btnSighIn= findViewById(R.id.btnSignIn);
+        btnSighUp=findViewById(R.id.btnSighUp);
 
 
     }
-    public void onClickCancel(View v)
+
+    /**
+     * دالة لمعالجة حدث الضغط على كائن بمواجهة المستعمل.
+     * على سبيل المثال ر للكائن الذي سبب الحدث
+     */
+
+    public void onClickSignUp(View v)
     {
+        Intent i= new Intent(SignIn.this, SignUp.class);
+        startActivity(i);
 
-        finish();
+
     }
+    public void onClickSignIn (View v)
+    {
+        checkEmailPassw();
+
+    }
+
     private  void checkEmailPassw()
     {
         boolean isALLOK=true;// يحوي نتيجة فحص الحقول ان كانت سلمي
@@ -47,10 +58,7 @@ public class SignUp extends AppCompatActivity
         // استخراج نص كلمة المرور
         String password =etPassword.getText().toString();
         //فحص الايمل ان كان طوله اقل من 6 او لا يحوي @ فهو خطأ
-
-        String Phone =etPhone.getText().toString();
-
-        if(email.length()<10 || email.contains("@")==false);
+        if(email.length()< 10 || email.contains("@")==false);
         // تعديل المتغير ليدل على ان الفحص يعطي نتيجة خاطئة
         {
             isALLOK = false;
@@ -64,14 +72,6 @@ public class SignUp extends AppCompatActivity
             //عرض ملاحظة خطأ على الشاشة داخل حقل لمة المرور
             etPassword.setError("Wrong Password");
         }
-        if(Phone.length()<9 || Phone.length()>9 );
-        // تعديل المتغير ليدل على ان الفحص يعطي نتيجة خاطئة
-        {
-            isALLOK = false;
-            //عرض ملاحظة خطأ على الشاشة داخل حقل لمة المرور
-            etPhone.setError("Wrong Phone Number");
-        }
-
         if(isALLOK);
         {
             Toast.makeText(this, "ALL OK ", Toast.LENGTH_SHORT).show();
@@ -81,8 +81,6 @@ public class SignUp extends AppCompatActivity
 
 
 
-
     }
-
 
 }

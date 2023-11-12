@@ -1,4 +1,4 @@
-package sham.dawod.shamfinal2023;
+package sham.dawod.shamfinal2023.data;
 
 public class Restaurant
 {
@@ -6,7 +6,7 @@ public class Restaurant
     private int Rphonenum ; // رقم هاتف المطعم
     private String WorkingHours ;
     private RestMenu Rmrnu;
-    private Location  RLocation;
+    private Location RLocation;
 
 
 

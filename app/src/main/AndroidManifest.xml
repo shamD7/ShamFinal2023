@@ -34,7 +34,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".SignIn"
+            android:name=".data.SignIn"
             android:exported="false">
 
             <meta-data
