@@ -5,8 +5,6 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import sham.dawod.shamfinal2023.data.SignIn;
-
 public class splashScreen extends AppCompatActivity {
 
     @Override
