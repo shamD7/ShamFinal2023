@@ -6,22 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".splashScreen">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#BA7474"
-                android:backgroundTint="#DF2424"
-                app:srcCompat="@mipmap/shamlogo_foreground" />
-        </LinearLayout>
-    </RelativeLayout>
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#DF0909"
+        app:srcCompat="@drawable/shamlastttttt" />
 </android.support.constraint.ConstraintLayout>
