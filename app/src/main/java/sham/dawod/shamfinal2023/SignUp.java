@@ -46,9 +46,11 @@ public class SignUp extends AppCompatActivity
         String email=etEmail.getText().toString();
         // استخراج نص كلمة المرور
         String password =etPassword.getText().toString();
-        //فحص الايمل ان كان طوله اقل من 6 او لا يحوي @ فهو خطأ
-
+        // استخراج نص رقم الهاتف
         String Phone =etPhone.getText().toString();
+        // استخراج نص الاسم
+        String name = etName.getText().toString();
+        //فحص الايمل ان كان طوله اقل من 6 او لا يحوي @ فهو خطأ
 
         if(email.length()<10 || email.contains("@")==false);
         // تعديل المتغير ليدل على ان الفحص يعطي نتيجة خاطئة
@@ -71,6 +73,14 @@ public class SignUp extends AppCompatActivity
             //عرض ملاحظة خطأ على الشاشة داخل حقل لمة المرور
             etPhone.setError("Wrong Phone Number");
         }
+        if (name.length() < 1 ) ;
+        // تعديل المتغير ليدل على ان الفحص يعطي نتيجة خاطئة
+        {
+            isALLOK = false;
+            //عرض ملاحظة خطأ على الشاشة داخل حقل الاسم
+            etName.setError("Wrong Name");
+        }
+
 
         if(isALLOK);
         {
