@@ -52,21 +52,21 @@ public class SignUp extends AppCompatActivity
         String name = etName.getText().toString();
         //فحص الايمل ان كان طوله اقل من 6 او لا يحوي @ فهو خطأ
 
-        if(email.length()<10 || email.contains("@")==false);
+        if(email.length()<10 || email.contains("@")==false)
         // تعديل المتغير ليدل على ان الفحص يعطي نتيجة خاطئة
         {
             isALLOK = false;
             //عرض ملاحظة خطأ على الشاشة داخل حقل البريد
             etEmail.setError("Wrong Email");
         }
-        if(password.length()<8 || password.contains("")==true);
+        if(password.length()<8 || password.contains(" ")==true)
         // تعديل المتغير ليدل على ان الفحص يعطي نتيجة خاطئة
         {
             isALLOK = false;
             //عرض ملاحظة خطأ على الشاشة داخل حقل لمة المرور
             etPassword.setError("Wrong Password");
         }
-        if(Phone.length()<9 || Phone.length()>9 );
+        if(Phone.length()<10 || Phone.length()>10 )
         // تعديل المتغير ليدل على ان الفحص يعطي نتيجة خاطئة
         {
             isALLOK = false;
