@@ -26,20 +26,21 @@
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tvRphoneNumber"
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:text="PHONE NUMBER :"
             android:textSize="25dp" />
 
         <TextView
+            android:id="@+id/tvRlocatoin"
             android:layout_width="match_parent"
             android:layout_height="44dp"
             android:text="LOCATOIN :"
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/tvWorkingHours"
+            android:id="@+id/tvRworkingHours"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:text="WORKING HOURS :"

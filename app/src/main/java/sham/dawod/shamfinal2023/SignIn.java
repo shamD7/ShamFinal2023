@@ -8,6 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import sham.dawod.shamfinal2023.data.AppDatabase;
+import sham.dawod.shamfinal2023.data.resTable.Restaurants;
+import sham.dawod.shamfinal2023.data.usersTable.MyUser;
+import sham.dawod.shamfinal2023.data.usersTable.MyUserQuery;
+
 public class SignIn extends AppCompatActivity
 {
     private TextInputEditText etEmail;
@@ -45,6 +50,8 @@ public class SignIn extends AppCompatActivity
     {
         checkEmailPassw();
 
+
+
     }
 
     private  void checkEmailPassw()
@@ -72,12 +79,45 @@ public class SignIn extends AppCompatActivity
         if(isALLOK);
         {
             Toast.makeText(this, "ALL OK ", Toast.LENGTH_SHORT).show();
+
+            //بناء قاعدة بيانات وارجاع المؤشر عليها
+            AppDatabase db = AppDatabase.getDB(getApplicationContext());
+            //مؤشر لكائن عمليات الجدول
+            MyUserQuery userQuery = db.getMyUserQuery();
+
+            // ان لم يكن موجود استدعاء العملبة التي تنفذ الاستعلام الذي يفحص البريد و كلمة المرور ويعيد كائنا ان كان موجود
+            MyUser myUse = userQuery.checkEmailPassw(email, password);
+            if (myUse == null) //هل لا يوجد كائن حسب الايمل والباسورد
+                Toast.makeText(this, "Wrong Email or Password", Toast.LENGTH_LONG).show();
+            /**
+             *  else
+             *             {
+             *                 if()// اذا انت المالك
+             *                 {
+             *                     //انقل لشاشة المالك
+             *                 }
+             *                 else
+             *                 {
+             *                     // ان كان هنالك حساب حساب الايميل والباسورد ننتقل الى الشاشة الرئيسية
+             *                     Intent i = new Intent(SignIn.this, Restaurants.class);
+             *                     startActivity(i);
+             *                     //to close current activity
+             *                     finish();
+             *
+             *                 }
+             *             }
+             */
+
+
+            }
+
+
         }
 
 
 
 
 
-    }
+
 
 }
