@@ -9,52 +9,24 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tvEnter"
+        <ImageView
+            android:id="@+id/imageView2"
             android:layout_width="match_parent"
-            android:layout_height="53dp"
-            android:layout_marginTop="55dp"
-            android:gravity="center"
-            android:text="put the restaurant details"
-            android:textSize="30dp" />
+            android:layout_height="249dp"
+            app:srcCompat="@android:drawable/ic_menu_gallery" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="55dp">
+            android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etResName"
+                android:id="@+id/etRName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="ADD  NAME"
-                android:textSize="20sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etPhoneNumber"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="ADD PHONE NUMBER "
-                android:textSize="20sp" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etLocatoin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Res LOCATOIN "
+                android:hint="Enter Restaurant name"
                 android:textSize="20sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -63,37 +35,67 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etWorkingHours"
+                android:id="@+id/etPhoneNum"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Res WORKING HOURS"
+                android:hint="Enter Restaurant phone number"
+                android:textSize="20sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Restaurant Locatoin"
+                android:textSize="20sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etWorkHours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Restaurant Working Hours"
                 android:textSize="20sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/btnAddResMenu"
+            android:id="@+id/btnRestMnue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ADD MNUE" />
+            android:onClick="onClickResMenu"
+            android:text="THE MENU :"
+            android:textSize="25sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btnSaveRes"
+                android:id="@+id/btnSaveR"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="SAVE" />
+                android:text="SAVE"
+                android:textSize="25sp" />
 
             <Button
-                android:id="@+id/btnCancelRes"
+                android:id="@+id/btnCancelR"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="CANCEL" />
+                android:text="CANCEL"
+                android:textSize="25sp" />
         </LinearLayout>
+
     </LinearLayout>
+
 </RelativeLayout>
