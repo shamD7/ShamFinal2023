@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import sham.dawod.shamfinal2023.data.AppDatabase;
-import sham.dawod.shamfinal2023.data.resTable.Restaurants;
 import sham.dawod.shamfinal2023.data.usersTable.MyUser;
 import sham.dawod.shamfinal2023.data.usersTable.MyUserQuery;
 
@@ -29,7 +28,7 @@ public class SignIn extends AppCompatActivity
         etEmail= findViewById(R.id.etEmail);
         etPassword=findViewById(R.id.etPassword);
         btnSighIn= findViewById(R.id.btnSignIn);
-        btnSighUp=findViewById(R.id.btnSighUp);
+        btnSighUp=findViewById(R.id.btnSignUp);
 
 
     }

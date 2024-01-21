@@ -7,6 +7,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import sham.dawod.shamfinal2023.data.AppDatabase;
+import sham.dawod.shamfinal2023.data.resTable.RestaurantQuery;
+import sham.dawod.shamfinal2023.data.resTable.Restaurants;
+
 public class addRes extends AppCompatActivity
 {
     private TextView etRName;
@@ -53,21 +57,27 @@ public class addRes extends AppCompatActivity
             isAllOk = false;
             etWorkHours.setError("Wrong shortTitle");
         }
-        if (isAllOk)
-        {
+        if (isAllOk) {
             Toast.makeText(this, "All Ok", Toast.LENGTH_SHORT).show();
+
+
+
+                AppDatabase db = AppDatabase.getDB(getApplicationContext());
+                //بناء مهمة جديد وتحديد صفاتها
+                //Restaurants task=new Restaurants();
+                //Restaurants
+                //Restaurants.text=textTask;
+                //Restaurants.shortTitle=subjText;
+                //Restaurants.subjId=subject.key_id; //تحديد رقم الموضوع للمهمة
+                //db.RestaurantQuery().insertAll(task);//اضافة مهمة للجدول
+                //finish();
+
+
         }
 
 
+
     }
-
-
-
-
-
-
-
-
 
 
 

@@ -17,6 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#4F70E4"
             android:text="sign up as a client" />
 
         <Button
@@ -24,6 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="#4F70E4"
             android:text="sign up as an owner" />
     </LinearLayout>
 
@@ -45,6 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:layout_marginTop="100dp"
+                android:backgroundTint="#2CB8E6"
                 android:hint="E-mail/Username"
                 android:inputType="textEmailAddress"
                 android:textSize="20sp" />
@@ -60,6 +63,7 @@
                 android:id="@+id/etName"
                 android:layout_width="match_parent"
                 android:layout_height="65dp"
+                android:backgroundTint="#2CB8E6"
                 android:hint="name"
                 android:inputType="text"
                 android:textSize="20sp" />
@@ -74,6 +78,7 @@
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
+                android:backgroundTint="#2CB8E6"
                 android:hint="password"
                 android:inputType="textPassword|numberPassword"
                 android:textSize="20sp" />
@@ -87,6 +92,7 @@
                 android:id="@+id/etPhone"
                 android:layout_width="match_parent"
                 android:layout_height="65dp"
+                android:backgroundTint="#2CB8E6"
                 android:hint="Phone Number"
                 android:inputType="phone"
                 android:textSize="20sp" />
@@ -107,7 +113,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="#DF2424"
+                android:backgroundTint="#86AEEC"
                 android:text="SAVE"
                 android:textSize="20dp" />
 
@@ -116,7 +122,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="#DF2424"
+                android:backgroundTint="#86AEEC"
                 android:onClick="onClickCancel"
                 android:text="CANCEL"
                 android:textSize="20dp" />
