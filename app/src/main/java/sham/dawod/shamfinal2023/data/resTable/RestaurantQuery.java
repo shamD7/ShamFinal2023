@@ -9,7 +9,6 @@ import androidx.room.Update;
 import java.util.List;
 
 /** واجهة استعلامات على جدول المعطيات*/
-
 @Dao
 public interface RestaurantQuery
 {
@@ -25,7 +24,6 @@ public interface RestaurantQuery
      */
     @Insert
     void insertAll (Restaurants...restaurants);
-
     /**
      * تعديل المطاعم
      * @param restaurants * مجموعة المطاعم للتعديل
@@ -36,7 +34,6 @@ public interface RestaurantQuery
      * حذف مطاعم
      * @param restaurants * حذف مطاعم (  حسب المفاتح الرئيسي)
      */
-
     @Delete
     void deleteRest(Restaurants ... restaurants);
     @Query("DELETE FROM Restaurants WHERE keyid=:id")
