@@ -1,15 +1,13 @@
 package sham.dawod.shamfinal2023;
 
-import android.support.design.widget.TextInputEditText;
-import android.support.v7.app.AppCompatActivity;
+import com.google.android.material.textfield.TextInputEditText;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import sham.dawod.shamfinal2023.data.AppDatabase;
-import sham.dawod.shamfinal2023.data.resTable.RestaurantQuery;
-import sham.dawod.shamfinal2023.data.resTable.Restaurants;
 
 public class addRes extends AppCompatActivity
 {

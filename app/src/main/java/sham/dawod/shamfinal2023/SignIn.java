@@ -1,8 +1,15 @@
 package sham.dawod.shamfinal2023;
 
 import android.content.Intent;
-import android.support.design.widget.TextInputEditText;
-import android.support.v7.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -47,7 +54,7 @@ public class SignIn extends AppCompatActivity
     }
     public void onClickSignIn (View v)
     {
-        checkEmailPassw();
+        checkEmailPassw_FB();
 
 
 
@@ -111,6 +118,61 @@ public class SignIn extends AppCompatActivity
 
             }
 
+        }
+    private void checkEmailPassw_FB() {
+        boolean isALLOK = true;// يحوي نتيجة فحص الحقول ان كانت سلمي
+        //استخراج النص من حقل الايميل
+        String email = etEmail.getText().toString();
+        // استخراج نص كلمة المرور
+        String password = etPassword.getText().toString();
+        //فحص الايمل ان كان طوله اقل من 6 او لا يحوي @ فهو خطأ
+        if (email.length() < 6 || email.contains("@") == false)
+        // تعديل المتغير ليدل على ان الفحص يعطي نتيجة خاطئة
+        {
+            isALLOK = false;
+            //عرض ملاحظة خطأ على الشاشة داخل حقل البريد
+            etEmail.setError("Wrong Email");
+        }
+        if (password.length() < 8 || password.contains(" ") == true)
+        // تعديل المتغير ليدل على ان الفحص يعطي نتيجة خاطئة
+        {
+            isALLOK = false;
+            //عرض ملاحظة خطأ على الشاشة داخل حقل لمة المرور
+            etPassword.setError("Wrong Password");
+        }
+        if (isALLOK)
+        {
+            //كائن لعملية التسجيل
+            FirebaseAuth auth=FirebaseAuth.getInstance();
+            //لدخول للحساب بمساعدة الايميل وكلمة المرور
+            auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override//התגובה שמתקבל מהענן הכניסה בענן
+                public void onComplete(@NonNull Task<AuthResult> task)
+                {
+                    if(task.isSuccessful()){//אם הפעולה הצליחה
+                        Toast.makeText(SignIn.this, "Signing in", Toast.LENGTH_SHORT).show();
+                        //מעבר למסך הראשי
+                        Intent i = new Intent(SignIn.this,profile.class);
+                        startActivity(i);
+                    }
+                    else {
+                        Toast.makeText(SignIn.this, "Signing in Failed", Toast.LENGTH_SHORT).show();
+                        etEmail.setError(task.getException().getMessage());//הצגת הודעת השגיה שהקבלה מהענן
+                    }
+
+
+
+                }
+            });
+
+
+
+
+        }
+
+    }
+
+
 
         }
 
@@ -118,6 +180,3 @@ public class SignIn extends AppCompatActivity
 
 
 
-
-
-}

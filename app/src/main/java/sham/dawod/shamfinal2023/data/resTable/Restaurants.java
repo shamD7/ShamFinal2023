@@ -1,21 +1,11 @@
 package sham.dawod.shamfinal2023.data.resTable;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.PopupMenu;
-
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-import sham.dawod.shamfinal2023.R;
 import sham.dawod.shamfinal2023.data.Location;
 import sham.dawod.shamfinal2023.data.RestMenu;
-import sham.dawod.shamfinal2023.favoriteRes;
-import sham.dawod.shamfinal2023.profile;
+
 @Entity
 /**
  * فئة تمثل مطعم
