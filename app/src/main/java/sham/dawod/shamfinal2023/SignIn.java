@@ -152,6 +152,7 @@ public class SignIn extends AppCompatActivity
                     if(task.isSuccessful()){//אם הפעולה הצליחה
                         Toast.makeText(SignIn.this, "Signing in", Toast.LENGTH_SHORT).show();
                         //מעבר למסך הראשי
+                        //todo change the taget screen to main activty
                         Intent i = new Intent(SignIn.this,profile.class);
                         startActivity(i);
                     }
