@@ -18,6 +18,9 @@ public class MyUser {
     public String phone;
     /**كلمة مرور المستخدم*/
     public String passw;
+    /**رقم مميز*/
+    public String Id;
+
 
     @Override
     public String toString() {
@@ -27,7 +30,31 @@ public class MyUser {
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", passw='" + passw + '\'' +
+                ", Id='" + Id + '\'' +
                 '}';
     }
 
+    public void setKeyid(long keyid) {
+        this.keyid = keyid;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public void setPassw(String passw) {
+        this.passw = passw;
+    }
+
+    public void setId(String id) {
+        Id = id;
+    }
 }

@@ -5,6 +5,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +13,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import sham.dawod.shamfinal2023.data.usersTable.MyUser;
 
 public class SignUp extends AppCompatActivity {
     private TextInputEditText etEmail;
@@ -155,9 +158,14 @@ public class SignUp extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(SignUp.this, "Signing up Succeeded ", Toast.LENGTH_SHORT).show();
-                            finish();
-                        } else {
+                                Toast.makeText(SignUp.this, "Signing up Succeeded ", Toast.LENGTH_SHORT).show();
+                            saveUser_FB(email1,name1,phone1,password1);
+                                finish();
+
+                            }
+
+
+                        else {
                             Toast.makeText(SignUp.this, "Signing up Failed", Toast.LENGTH_SHORT).show();
                             etEmail.setError(task.getException().getMessage());// عرض رسالة الغلط
 
@@ -170,6 +178,49 @@ public class SignUp extends AppCompatActivity {
 
 
             }
+        }
+
+        private void saveUser_FB(String email ,String name, String phone ,String passw)
+        {
+            //مؤشر لقاعدة البيانات
+            FirebaseFirestore db= FirebaseFirestore.getInstance();
+            //استخراج الرقم المميز للمستعمل الذي سجل الدخول لاستعماله كاسم للدوكيومينت
+            String uid=FirebaseAuth.getInstance().getCurrentUser().getUid();
+            //بناء الكائن الذي سيتم حفظه
+            MyUser user = new MyUser();
+            user.setEmail(email);
+            user.setFullName(name);
+            user.setPassw(passw);
+            user.setPhone(phone);
+            user.setId(uid);
+            //اضافة كائن لمجموعة المستعملين ومعالج حدث لفحص نجاح المطلوب
+            //معالج حدث لفحص هل تم المطلوب من قاعدة البيانات
+            db.collection("MyUsers").document(uid).set(user).addOnCompleteListener(new OnCompleteListener<Void>()
+            {
+                //دالة معالج الحدث
+                @Override
+                public void onComplete(@NonNull Task<Void> task)
+                {
+                    //هل تم تنفيذ المطلوب بنجاح
+                    if (task.isSuccessful()){
+                        Toast.makeText(SignUp.this, "Succeeded to add User", Toast.LENGTH_SHORT).show();
+                        finish();
+
+                    }
+                    else {
+                        Toast.makeText(SignUp.this, "Failed to add User", Toast.LENGTH_SHORT).show();
+                    }
+
+
+                }
+            });
+
+
+
+
+
+
+
         }
 
 
