@@ -28,7 +28,6 @@ public class addRes extends AppCompatActivity
         etPhoneNum=findViewById(R.id.etPhoneNum);
         etLocation=findViewById(R.id.etLocation);
         etWorkHours=findViewById(R.id.etWorkHours);
-        btnRestMnue=findViewById(R.id.btnRestMnue);
         btnSaveR=findViewById(R.id.btnSaveR);
         btnCancelR=findViewById(R.id.btnCancelR);
     }

@@ -19,7 +19,7 @@ public class MyUser {
     /**كلمة مرور المستخدم*/
     public String passw;
     /**رقم مميز*/
-    public String Id;
+    public String id;
 
 
     @Override
@@ -30,7 +30,7 @@ public class MyUser {
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", passw='" + passw + '\'' +
-                ", Id='" + Id + '\'' +
+                ", Id='" + id + '\'' +
                 '}';
     }
 
@@ -55,6 +55,6 @@ public class MyUser {
     }
 
     public void setId(String id) {
-        Id = id;
+        this.id = id;
     }
 }

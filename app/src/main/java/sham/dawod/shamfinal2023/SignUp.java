@@ -160,7 +160,7 @@ public class SignUp extends AppCompatActivity {
                         if (task.isSuccessful()) {
                                 Toast.makeText(SignUp.this, "Signing up Succeeded ", Toast.LENGTH_SHORT).show();
                             saveUser_FB(email1,name1,phone1,password1);
-                                finish();
+                             //   finish();
 
                             }
 

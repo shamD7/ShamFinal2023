@@ -86,7 +86,7 @@
 
             <ImageButton
                 android:id="@+id/imageButton123"
-                android:layout_width="224dp"
+                android:layout_width="94dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 app:srcCompat="@android:drawable/ic_popup_sync" />
@@ -98,38 +98,23 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-
-
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="258dp"
-                android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="285dp"
                     android:layout_height="wrap_content"
-                    android:hint="Your phone number"
-                    android:textSize="16sp" />
+                    android:hint="hint" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="285dp"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="285dp"
-                    android:layout_height="wrap_content"
-                    android:hint="Your locatoin" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="84dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/ic_popup_sync" />
 
         </LinearLayout>
 
