@@ -8,7 +8,7 @@ public class favoriteRes extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_favorite_res);
+        setContentView(R.layout.favorite_res);
     }
 }
 

@@ -23,7 +23,7 @@ public class addRes extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_res);
+        setContentView(R.layout.add_res);
         etRName=findViewById(R.id.etRName);
         etPhoneNum=findViewById(R.id.etPhoneNum);
         etLocation=findViewById(R.id.etLocation);

@@ -8,6 +8,6 @@ public class ResMenu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.resmenu);
+        setContentView(R.layout.res_menu);
     }
 }
