@@ -34,7 +34,6 @@ public class addDish extends AppCompatActivity
         btnSaveM=findViewById(R.id.btnSaveM);
         btnCancelM=findViewById(R.id.btnCancelM);
 
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.add_meal);
         //spnr2 وضع مؤشر الصفة على الكائن المرئي الموجود بواجهة المستعمل
         spnrMeals=findViewById(R.id.spnrMeals);
