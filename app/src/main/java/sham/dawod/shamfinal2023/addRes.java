@@ -25,9 +25,9 @@ public class addRes extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_res);
         etRName=findViewById(R.id.etRName);
-        etPhoneNum=findViewById(R.id.etPhoneNum);
-        etLocation=findViewById(R.id.etLocation);
-        etWorkHours=findViewById(R.id.etWorkHours);
+        etPhoneNum=findViewById(R.id.etRPhoneNum);
+        etLocation=findViewById(R.id.etLocationR);
+        etWorkHours=findViewById(R.id.etWorkHoursR);
         btnSaveR=findViewById(R.id.btnSaveR);
         btnCancelR=findViewById(R.id.btnCancelR);
     }

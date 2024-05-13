@@ -111,11 +111,6 @@
                 android:textColor="#4F70E4"
                 android:textSize="20sp" />
 
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="8dp"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/btn_dropdown" />
         </LinearLayout>
 
     </LinearLayout>

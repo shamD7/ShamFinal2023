@@ -36,7 +36,7 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etPhoneNum"
+                android:id="@+id/etRPhoneNum"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Restaurant phone number"
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etLocation"
+                android:id="@+id/etLocationR"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Restaurant Locatoin"
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etWorkHours"
+                android:id="@+id/etWorkHoursR"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Restaurant Working Hours"
