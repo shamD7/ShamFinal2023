@@ -25,44 +25,44 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvResTitle"
+                android:id="@+id/tvResName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="Restaurant Name" />
 
             <TextView
-                android:id="@+id/tvResText"
+                android:id="@+id/tvResHours"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="Working  Hours" />
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/tvResMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="Restaurant Menu" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageButton
-                    android:id="@+id/imageButton"
-                    android:layout_width="match_parent"
+                    android:id="@+id/imgBtnGo"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     app:srcCompat="@android:drawable/ic_menu_send" />
 
                 <ImageButton
-                    android:id="@+id/imageButton2"
+                    android:id="@+id/imgBtnCallitm"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     app:srcCompat="@android:drawable/sym_action_call" />
 
                 <ImageButton
-                    android:id="@+id/imageButton3"
+                    android:id="@+id/imgBtnFavorite"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     app:srcCompat="@android:drawable/btn_star_big_off" />
             </LinearLayout>
