@@ -1,8 +1,6 @@
 package sham.dawod.shamfinal2023.data.resTable;
-
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-
 import sham.dawod.shamfinal2023.data.Location;
 import sham.dawod.shamfinal2023.data.RestMenu;
 

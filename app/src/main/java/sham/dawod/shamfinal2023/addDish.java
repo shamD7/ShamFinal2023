@@ -25,7 +25,7 @@ public class addDish extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_meal);
+        setContentView(R.layout.add_dish);
         etMealName=findViewById(R.id.etMealName);
         etMealPrice=findViewById(R.id.etMealPrice);
         etMealIngred=findViewById(R.id.etMealIngredients);
@@ -34,7 +34,7 @@ public class addDish extends AppCompatActivity
         btnSaveM=findViewById(R.id.btnSaveM);
         btnCancelM=findViewById(R.id.btnCancelM);
 
-        setContentView(R.layout.add_meal);
+        setContentView(R.layout.add_dish);
         //spnr2 وضع مؤشر الصفة على الكائن المرئي الموجود بواجهة المستعمل
         spnrMeals=findViewById(R.id.spnrMeals);
         //spnr3 بناء الوسيط وتحديد واجهة تنسيق لمعطى واحد

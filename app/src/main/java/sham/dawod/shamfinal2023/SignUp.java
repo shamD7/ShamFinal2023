@@ -1,21 +1,17 @@
 package sham.dawod.shamfinal2023;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
 import sham.dawod.shamfinal2023.data.usersTable.MyUser;
-
 public class SignUp extends AppCompatActivity {
     private TextInputEditText etEmail;
     private TextInputEditText etPassword;
@@ -24,7 +20,6 @@ public class SignUp extends AppCompatActivity {
     private TextInputEditText etLocation;
     private Button btnSAVE;
     private Button btnCancel;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,19 +30,13 @@ public class SignUp extends AppCompatActivity {
         etName = (TextInputEditText) findViewById(R.id.etName);
         etPhone = (TextInputEditText) findViewById(R.id.etPhone);
         btnSAVE = (Button) findViewById(R.id.btnSAVE);
-        btnCancel = (Button) findViewById(R.id.btnCancel);
-
-
-    }
+        btnCancel = (Button) findViewById(R.id.btnCancel);}
 
     public void onClickSave(View v) {
         checkAndSignUP_FB();
-
-
     }
 
     public void onClickCancel(View v) {
-
         finish();
     }
 
@@ -95,7 +84,6 @@ public class SignUp extends AppCompatActivity {
             etName.setError("Wrong Name");
         }
 
-
         if (isALLOK) ;
         {
             Toast.makeText(this, "ALL OK ", Toast.LENGTH_SHORT).show();
@@ -105,8 +93,6 @@ public class SignUp extends AppCompatActivity {
         private void checkAndSignUP_FB()
         {
             boolean isALLOK1 = true;// يحوي نتيجة فحص الحقول ان كانت سلمي
-            //استخراج النص من حقل الايميل
-
             //استخراج النص من حقل الايميل
             String email1 = etEmail.getText().toString();
             // استخراج نص كلمة المرور
@@ -149,7 +135,6 @@ public class SignUp extends AppCompatActivity {
                 etName.setError("Wrong Name");
             }
 
-
             if (isALLOK1) {
                 //كائن لعملية التسجيل
                 FirebaseAuth auth = FirebaseAuth.getInstance();
@@ -161,19 +146,12 @@ public class SignUp extends AppCompatActivity {
                                 Toast.makeText(SignUp.this, "Signing up Succeeded ", Toast.LENGTH_SHORT).show();
                             saveUser_FB(email1,name1,phone1,password1);
                              //   finish();
-
                             }
-
-
                         else {
                             Toast.makeText(SignUp.this, "Signing up Failed", Toast.LENGTH_SHORT).show();
                             etEmail.setError(task.getException().getMessage());// عرض رسالة الغلط
-
                         }
-
-
                     }
-
                 });
 
 
@@ -214,14 +192,5 @@ public class SignUp extends AppCompatActivity {
 
                 }
             });
-
-
-
-
-
-
-
         }
-
-
 }

@@ -10,8 +10,7 @@
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
-        android:layout_height="749dp"
-        android:background="#39C1DC"
-        android:backgroundTint="#86AEEC"
-        app:srcCompat="@drawable/logo1" />
+        android:layout_height="match_parent"
+        android:background="#FDAD33"
+        app:srcCompat="@mipmap/logo_final_foreground" />
 </LinearLayout>
