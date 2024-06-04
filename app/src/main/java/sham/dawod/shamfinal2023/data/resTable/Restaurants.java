@@ -13,6 +13,9 @@ public class Restaurants
     @PrimaryKey(autoGenerate = true)
     /**رقم المطعم*/
     public long keyid;
+    /**صورة المطعم*/
+
+    public String image;
 
     /**اسم المطعم*/
     public String restName;
@@ -34,6 +37,34 @@ public class Restaurants
                 ", restWorkHours='" + restWorkHours + '\'' +
                 ", restMenu=" + restMenu +
                 '}';
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public String getRestName() {
+        return restName;
+    }
+
+    public String getRestWorkHours() {
+        return restWorkHours;
+    }
+
+    public void setRestPhonenum(int restPhonenum) {
+        this.restPhonenum = restPhonenum;
+    }
+
+    public RestMenu getRestMenu() {
+        return restMenu;
+    }
+
+    public int getRestPhonenum() {
+        return restPhonenum;
+    }
+
+    public Location getRestLocation() {
+        return restLocation;
     }
 }
 

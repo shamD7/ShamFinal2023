@@ -3,7 +3,10 @@ package sham.dawod.shamfinal2023;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.GridView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -28,28 +31,27 @@ public class MainActivityRestaurants extends AppCompatActivity {
     private FloatingActionButton fabAdd;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity_restaurants);//
-        GridRes=findViewById(R.id.GridRes);
-        ResAdapter=new MyRestaurantAdapter(this,R.layout.res_item_layout);
+        GridRes = findViewById(R.id.GridRes);
+        ResAdapter = new MyRestaurantAdapter(this, R.layout.res_item_layout);
         GridRes.setAdapter(ResAdapter);// ربط الوسيط بمركب مرئي لعرض مجموعة معطيات
 
 
-
     }
+
     /**
-     *قراءة معطيات من مبنى المعطيات
+     * قراءة معطيات من مبنى المعطيات
      * تسجيل المعطيات التي قرأناها من مبنى المعطيات
+     *
      * @return
      */
 
-    public void readTaskFrom_FB()
-    {
+    public void readTaskFrom_FB() {
         //בניית רשימה ריקה
-        ArrayList<Restaurants> arrayList =new ArrayList<>();
+        ArrayList<Restaurants> arrayList = new ArrayList<>();
         //קבלת הפנייה למסד הנתונים
         FirebaseFirestore ffRef = FirebaseFirestore.getInstance();
         //קישור לקבוצה collection שרוצים לקרוא
@@ -65,7 +67,7 @@ public class MainActivityRestaurants extends AppCompatActivity {
                      */
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if(task.isSuccessful()) {// אם בקשת הנתונים התקבלה בהצלחה
+                        if (task.isSuccessful()) {// אם בקשת הנתונים התקבלה בהצלחה
                             //מעבר על כל ה״מסמכים״= עצמים והוספתם למבנה הנתונים
                             for (DocumentSnapshot document : task.getResult().getDocuments()) {
                                 //המרת העצם לטיפוס שלו// הוספת העצם למבנה הנתונים
@@ -73,12 +75,44 @@ public class MainActivityRestaurants extends AppCompatActivity {
                             }
                             ResAdapter.clear();//ניקוי המתאם מכל הנתונים
                             ResAdapter.addAll(arrayList);//הוספת כל הנתונים למתאם
-                        }
-                        else{
-                            Toast.makeText(MainActivityRestaurants.this, "Error Reading data"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(MainActivityRestaurants.this, "Error Reading data" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
     }
 
+    @Override// بناء قائمة
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
     }
+
+    @Override //   معالجة حدث اختيار عنصر من القائمة
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        if (item.getItemId() == R.id.itmSettings)
+        {
+
+        }
+        if (item.getItemId() == R.id.itmProfile)
+        {
+            Intent i = new Intent(MainActivityRestaurants.this, profile.class);
+            startActivity(i);
+        }
+        if (item.getItemId() == R.id.itemLogOut)
+        {
+
+        }
+
+        return true;
+    }
+
+}
+
+
+
+
+
+

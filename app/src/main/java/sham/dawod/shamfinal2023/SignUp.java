@@ -7,6 +7,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -182,7 +184,8 @@ public class SignUp extends AppCompatActivity {
                     //هل تم تنفيذ المطلوب بنجاح
                     if (task.isSuccessful()){
                         Toast.makeText(SignUp.this, "Succeeded to add User", Toast.LENGTH_SHORT).show();
-                        finish();
+                        Intent i = new Intent(SignUp.this, profile.class);
+                        startActivity(i);
 
                     }
                     else {

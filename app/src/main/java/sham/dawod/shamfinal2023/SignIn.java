@@ -40,11 +40,13 @@ public class SignIn extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void onClickSignIn(View v) {
-
+    public void onClickSignIn(View v)
+    {
+        checkEmailPassw_FB ();
     }
 
-    private void checkEmailPassw() {
+    private void checkEmailPassw()
+    {
         boolean isALLOK = true;// يحوي نتيجة فحص الحقول ان كانت سلمي
         //استخراج النص من حقل الايميل
         String email = etEmail.getText().toString();
@@ -85,10 +87,7 @@ public class SignIn extends AppCompatActivity {
                 //to close current activity
                 finish();
             }
-
-
         }
-
     }
     private void checkEmailPassw_FB (){
         boolean isALLOK = true;// يحوي نتيجة فحص الحقول ان كانت سلمي
@@ -122,7 +121,7 @@ public class SignIn extends AppCompatActivity {
                         Toast.makeText(SignIn.this, "Signing in", Toast.LENGTH_SHORT).show();
                         //מעבר למסך הראשי
                         //todo change the taget screen to main activty
-                        Intent i = new Intent(SignIn.this, profile.class);
+                        Intent i = new Intent(SignIn.this, MainActivityRestaurants.class);
                         startActivity(i);
                     } else {
                         Toast.makeText(SignIn.this, "Signing in Failed", Toast.LENGTH_SHORT).show();

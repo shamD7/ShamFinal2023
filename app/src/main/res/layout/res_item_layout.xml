@@ -37,10 +37,10 @@
                 android:text="Working  Hours" />
 
             <TextView
-                android:id="@+id/tvResMenu"
+                android:id="@+id/tvResPhNum"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Restaurant Menu" />
+                android:text="TextView" />
 
             <LinearLayout
                 android:layout_width="match_parent"
