@@ -19,6 +19,7 @@ public class addRes extends AppCompatActivity
     private TextInputEditText etPhoneNum;
     private TextInputEditText etLocation;
     private TextInputEditText etWorkHours;
+
     private Button btnRestMnue;
     private Button btnSaveR;
     private Button btnCancelR;
@@ -77,7 +78,6 @@ public class addRes extends AppCompatActivity
         }
 
 
-
     }
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
@@ -91,9 +91,9 @@ public class addRes extends AppCompatActivity
         {
 
         }
-        if (item.getItemId() == R.id.itmProfile)
+        if (item.getItemId() == R.id.itmAddRes)
         {
-            Intent i = new Intent(addRes.this, profile.class);
+            Intent i = new Intent(addRes.this, addRes.class);
             startActivity(i);
         }
         if (item.getItemId() == R.id.itemLogOut)

@@ -1,8 +1,6 @@
 package sham.dawod.shamfinal2023;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,7 +8,6 @@ import android.view.MenuItem;
 import android.widget.GridView;
 import android.widget.Spinner;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -18,19 +15,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
-
 import java.util.ArrayList;
-
 import sham.dawod.shamfinal2023.data.resTable.MyRestaurantAdapter;
 import sham.dawod.shamfinal2023.data.resTable.Restaurants;
-
 public class MainActivityRestaurants extends AppCompatActivity {
     private GridView GridRes;
     private MyRestaurantAdapter ResAdapter;
     private Spinner spnrRes;
     private FloatingActionButton fabAdd;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +30,6 @@ public class MainActivityRestaurants extends AppCompatActivity {
         GridRes = findViewById(R.id.GridRes);
         ResAdapter = new MyRestaurantAdapter(this, R.layout.res_item_layout);
         GridRes.setAdapter(ResAdapter);// ربط الوسيط بمركب مرئي لعرض مجموعة معطيات
-
-
     }
 
     /**
@@ -48,7 +38,6 @@ public class MainActivityRestaurants extends AppCompatActivity {
      *
      * @return
      */
-
     public void readTaskFrom_FB() {
         //בניית רשימה ריקה
         ArrayList<Restaurants> arrayList = new ArrayList<>();
@@ -96,16 +85,15 @@ public class MainActivityRestaurants extends AppCompatActivity {
         {
 
         }
-        if (item.getItemId() == R.id.itmProfile)
+        if (item.getItemId() == R.id.itmAddRes)
         {
-            Intent i = new Intent(MainActivityRestaurants.this, profile.class);
+            Intent i = new Intent(MainActivityRestaurants.this, MainActivityRestaurants.class);
             startActivity(i);
         }
         if (item.getItemId() == R.id.itemLogOut)
         {
 
         }
-
         return true;
     }
 

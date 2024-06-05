@@ -1,0 +1,316 @@
+@startuml
+class sham.dawod.shamfinal2023.data.usersTable.MyUser {
++ long keyid
++ String fullName
++ String email
++ String phone
++ String passw
++ String id
++ String toString()
++ void setKeyid(long)
++ void setFullName(String)
++ void setEmail(String)
++ void setPhone(String)
++ void setPassw(String)
++ void setId(String)
+}
+note top of sham.dawod.shamfinal2023.data.usersTable.MyUser
+Entity=Table=جدول
+end note
+
+note left of sham.dawod.shamfinal2023.data.usersTable.MyUser::email
+ بحالة لم يتم اعطاء اسم للعامود يكون اسم الصفة هو اسم العامود
+end note
+note right of sham.dawod.shamfinal2023.data.usersTable.MyUser::phone
+رقم هاتف المستخدم 
+end note
+note left of sham.dawod.shamfinal2023.data.usersTable.MyUser::passw
+كلمة مرور المستخدم
+end note
+note right of sham.dawod.shamfinal2023.data.usersTable.MyUser::id
+رقم مميز
+end note
+
+
+class sham.dawod.shamfinal2023.MainActivityRestaurants {
+- GridView GridRes
+- MyRestaurantAdapter ResAdapter
+- Spinner spnrRes
+- FloatingActionButton fabAdd
+# void onCreate(Bundle)
++ void readTaskFrom_FB()
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+}
+
+
+class sham.dawod.shamfinal2023.splashScreen {
+# void onCreate(Bundle)
+}
+
+class sham.dawod.shamfinal2023.data.Location {
+- double lang
+- double lat
+}
+note left of sham.dawod.shamfinal2023.data.Location::lang
+ خط الطول
+end note
+note right of sham.dawod.shamfinal2023.data.Location::lat
+خط العرض
+end note
+
+interface sham.dawod.shamfinal2023.data.usersTable.MyUserQuery {
+~ List<MyUser> getAll()
+~ List<MyUser> loadAllByIds(int[])
+~ MyUser checkEmailPassw(String,String)
+~ void insertAll(MyUser)
+~ void delete(MyUser)
+~ void delete(int)
+~ void update(MyUser)
+~ MyUser checkEmail(String)
+}
+note left of sham.dawod.shamfinal2023.data.usersTable.MyUserQuery::getAll()
+
+     * اعادة جميع معطيات جدول المستعمل
+     *@return * من قائمة المستعملين
+     
+end note
+note right of sham.dawod.shamfinal2023.data.usersTable.MyUserQuery::loadAllByIds(int[])
+
+     * اعادة جميع معطيات جدول المستعمل
+     *@return * من قائمة المستعملين (  حسب مصفوفة المفاتح الرئيسي)
+     
+end note
+note left of sham.dawod.shamfinal2023.data.usersTable.MyUserQuery::checkEmailPassw(String,String)
+
+     * اعادة جميع معطيات جدول المستعمل
+     *@return * من قائمة المستعملين (  حسب الايميل وكلمة المرور)
+     
+end note
+note right of sham.dawod.shamfinal2023.data.usersTable.MyUserQuery::insertAll(MyUser)
+
+     * ادخال مستعملين
+     * @param users * مجموعة المستعملين
+     
+end note
+note left of sham.dawod.shamfinal2023.data.usersTable.MyUserQuery::delete(MyUser)
+
+     * حذف مستعمل
+     * @param user * المستعمل
+     
+end note
+note right of sham.dawod.shamfinal2023.data.usersTable.MyUserQuery::delete(int)
+
+     * حذف  مستعملين
+     * @param * حذف مستعملين (  حسب المفاتح الرئيسي)
+     
+end note
+note left of sham.dawod.shamfinal2023.data.usersTable.MyUserQuery::update(MyUser)
+
+     * تعديل المستعملين
+     * @param users * مجموعة المستعملين للتعديل
+     
+end note
+note right of sham.dawod.shamfinal2023.data.usersTable.MyUserQuery::checkEmail(String)
+
+     * اعادة جميع معطيات جدول المستعمل
+     *@return * من قائمة المستعملين (  حسب الايميل )
+     
+end note
+
+class sham.dawod.shamfinal2023.data.resTable.Restaurants {
++ long keyid
++ String image
++ String restName
++ int restPhonenum
++ Location restLocation
++ String restWorkHours
++ RestMenu restMenu
++ String toString()
++ String getImage()
++ String getRestName()
++ String getRestWorkHours()
++ void setRestPhonenum(int)
++ RestMenu getRestMenu()
++ int getRestPhonenum()
++ Location getRestLocation()
+}
+note left of sham.dawod.shamfinal2023.data.resTable.Restaurants::restName
+اسم المطعم
+end note
+note right of sham.dawod.shamfinal2023.data.resTable.Restaurants::restPhonenum
+رقم هاتف المطعم 
+end note
+note left of sham.dawod.shamfinal2023.data.resTable.Restaurants::restLocation
+موقع المطعم
+end note
+note right of sham.dawod.shamfinal2023.data.resTable.Restaurants::restWorkHours
+ساعات عمل المطعم 
+end note
+note left of sham.dawod.shamfinal2023.data.resTable.Restaurants::restMenu
+ منيو المطعم
+end note
+
+
+class sham.dawod.shamfinal2023.SignIn {
+- TextInputEditText etEmail
+- TextInputEditText etPassword
+- Button btnSighIn
+- Button btnSighUp
+# void onCreate(Bundle)
++ void onClickSignUp(View)
++ void onClickSignIn(View)
+- void checkEmailPassw()
+- void checkEmailPassw_FB()
+}
+
+
+class sham.dawod.shamfinal2023.addRes {
+- TextView etRName
+- TextInputEditText etPhoneNum
+- TextInputEditText etLocation
+- TextInputEditText etWorkHours
+- Button btnRestMnue
+- Button btnSaveR
+- Button btnCancelR
+# void onCreate(Bundle)
++ void checktask()
++ boolean onCreateOptionsMenu(Menu)
++ boolean onOptionsItemSelected(MenuItem)
+}
+
+
+interface sham.dawod.shamfinal2023.data.resTable.RestaurantQuery {
+~ List<Restaurants> getAllRestaurants()
+~ void insertAll(Restaurants)
+~ void update(Restaurants)
+~ void deleteRest(Restaurants)
+~ void deleteTask(long)
+}
+note top of sham.dawod.shamfinal2023.data.resTable.RestaurantQuery
+ واجهة استعلامات على جدول المعطيات
+end note
+
+note left of sham.dawod.shamfinal2023.data.resTable.RestaurantQuery::getAllRestaurants()
+
+     * اعادة جميع معطيات جدول المهمات
+     *@return  قائمة من المطاعم
+     
+end note
+note right of sham.dawod.shamfinal2023.data.resTable.RestaurantQuery::insertAll(Restaurants)
+
+     * ادخال مطاعم
+     * @param restaurants * مجموعة المطاعم
+     
+end note
+note left of sham.dawod.shamfinal2023.data.resTable.RestaurantQuery::update(Restaurants)
+
+     * تعديل المطاعم
+     * @param restaurants * مجموعة المطاعم للتعديل
+     
+end note
+note right of sham.dawod.shamfinal2023.data.resTable.RestaurantQuery::deleteRest(Restaurants)
+
+     * حذف مطاعم
+     * @param restaurants * حذف مطاعم (  حسب المفاتح الرئيسي)
+     
+end note
+
+class sham.dawod.shamfinal2023.profile {
+- TextInputEditText etNameC
+- TextInputEditText etPhNumC
+- TextInputEditText etLocatoinC
+- TextInputEditText etPhone
+- TextInputEditText etLocation
+- Button btnSAVE
+- Button btnCancel
+# void onCreate(Bundle)
+}
+
+
+abstract class sham.dawod.shamfinal2023.data.AppDatabase {
+- {static} AppDatabase db
++ {abstract}MyUserQuery getMyUserQuery()
++ {static} AppDatabase getDB(Context)
+}
+note top of sham.dawod.shamfinal2023.data.AppDatabase
+
+تعريف الجداول ورقم الاصدار
+version
+عند تغيير اي شي يخص جدول او جداول علينا تغيير رقم الاصدار
+ليتم بناء قاعدة البيانات من جديد
+
+end note
+
+note left of sham.dawod.shamfinal2023.data.AppDatabase::db
+
+     * كائن للتعامل مع قاعدة البيانات
+     
+end note
+
+note left of sham.dawod.shamfinal2023.data.AppDatabase::getMyUserQuery()
+
+     * يعيد كائن لعمليات جدول المستعملين
+     *
+     * @return
+     
+end note
+note right of sham.dawod.shamfinal2023.data.AppDatabase::getDB(Context)
+
+     * يعيد كائن لعمليات جدول الموضيع
+     *
+     * @return
+     
+end note
+
+class sham.dawod.shamfinal2023.SignUp {
+- TextInputEditText etEmail
+- TextInputEditText etPassword
+- TextInputEditText etName
+- TextInputEditText etPhone
+- TextInputEditText etLocation
+- Button btnSAVE
+- Button btnCancel
+# void onCreate(Bundle)
++ void onClickSave(View)
++ void onClickCancel(View)
+- void checkEmailPassw()
+- void checkAndSignUP_FB()
+- void saveUser_FB(String,String,String,String)
+}
+
+
+class sham.dawod.shamfinal2023.data.resTable.MyRestaurantAdapter {
+- int itemLayout
++ View getView(int,View,ViewGroup)
+- void downloadImageUsingPicasso(String,ImageView)
+- void callAPhoneNymber(String)
+}
+
+note left of sham.dawod.shamfinal2023.data.resTable.MyRestaurantAdapter::downloadImageUsingPicasso(String,ImageView)
+
+     * הצגת תמונה ישירות מהענן בעזרת המחלקה ״פיקאסו״
+     * @param imageUrL כתובת התמונה בענן/שרת
+     * @param toView רכיב תמונה המיועד להצגת התמונה אחרי ההורדה
+     
+end note
+note right of sham.dawod.shamfinal2023.data.resTable.MyRestaurantAdapter::callAPhoneNymber(String)
+
+     * ביצוע שיחה למפסר טלפון
+     * todo הוספת הרשאה בקובץ המניפיסט
+     * <uses-permission android:name="android.permission.CALL_PHONE" />
+     * @param phone מספר טלפון שרוצים להתקשר אליו
+     
+end note
+
+
+
+androidx.appcompat.app.AppCompatActivity <|-- sham.dawod.shamfinal2023.MainActivityRestaurants
+androidx.appcompat.app.AppCompatActivity <|-- sham.dawod.shamfinal2023.splashScreen
+androidx.appcompat.app.AppCompatActivity <|-- sham.dawod.shamfinal2023.SignIn
+androidx.appcompat.app.AppCompatActivity <|-- sham.dawod.shamfinal2023.addRes
+androidx.appcompat.app.AppCompatActivity <|-- sham.dawod.shamfinal2023.profile
+androidx.room.RoomDatabase <|-- sham.dawod.shamfinal2023.data.AppDatabase
+androidx.appcompat.app.AppCompatActivity <|-- sham.dawod.shamfinal2023.SignUp
+android.widget.ArrayAdapter <|-- sham.dawod.shamfinal2023.data.resTable.MyRestaurantAdapter
+@enduml

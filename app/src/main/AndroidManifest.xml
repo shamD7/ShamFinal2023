@@ -23,28 +23,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".addDish"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".addRestMenu"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".addRes"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".profile"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

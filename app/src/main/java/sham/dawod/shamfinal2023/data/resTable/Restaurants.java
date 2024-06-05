@@ -2,7 +2,6 @@ package sham.dawod.shamfinal2023.data.resTable;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import sham.dawod.shamfinal2023.data.Location;
-import sham.dawod.shamfinal2023.data.RestMenu;
 
 @Entity
 /**
@@ -14,9 +13,7 @@ public class Restaurants
     /**رقم المطعم*/
     public long keyid;
     /**صورة المطعم*/
-
     public String image;
-
     /**اسم المطعم*/
     public String restName;
     /**رقم هاتف المطعم */
@@ -25,8 +22,9 @@ public class Restaurants
     public Location restLocation;
     /**ساعات عمل المطعم */
     public String restWorkHours;
-    /** منيو المطعم*/
-    public RestMenu restMenu;
+    /**منيو  المطعم */
+    public String restMenu;
+
 
     @Override
     public String toString() {
@@ -47,16 +45,12 @@ public class Restaurants
         return restName;
     }
 
-    public String getRestWorkHours() {
-        return restWorkHours;
-    }
+    public String getRestWorkHours() {return restWorkHours;}
+
+    public String getRestMenu() {return restMenu;}
 
     public void setRestPhonenum(int restPhonenum) {
         this.restPhonenum = restPhonenum;
-    }
-
-    public RestMenu getRestMenu() {
-        return restMenu;
     }
 
     public int getRestPhonenum() {

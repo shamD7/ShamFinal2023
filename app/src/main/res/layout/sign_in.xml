@@ -11,24 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnSignInClient"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="#4F70E4"
-            android:text="sign in as a client" />
-
-        <Button
-            android:id="@+id/btnSignInOwner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="#4F70E4"
-            android:text="sign in as an owner" />
-    </LinearLayout>
+        android:orientation="horizontal"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -85,7 +68,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="#86AEEC"
             android:onClick="onClickSignIn"
             android:text="SIGN IN" />
 
@@ -94,7 +76,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="#86AEEC"
             android:onClick="onClickSignUp"
             android:text="SIGN UP" />
     </LinearLayout>

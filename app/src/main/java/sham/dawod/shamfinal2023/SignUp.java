@@ -184,7 +184,7 @@ public class SignUp extends AppCompatActivity {
                     //هل تم تنفيذ المطلوب بنجاح
                     if (task.isSuccessful()){
                         Toast.makeText(SignUp.this, "Succeeded to add User", Toast.LENGTH_SHORT).show();
-                        Intent i = new Intent(SignUp.this, profile.class);
+                        Intent i = new Intent(SignUp.this, MainActivityRestaurants.class);
                         startActivity(i);
 
                     }
