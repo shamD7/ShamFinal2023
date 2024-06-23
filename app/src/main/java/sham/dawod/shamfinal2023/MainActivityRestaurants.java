@@ -1,6 +1,8 @@
 package sham.dawod.shamfinal2023;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -91,10 +93,43 @@ public class MainActivityRestaurants extends AppCompatActivity {
             startActivity(i);
         }
         if (item.getItemId() == R.id.itemLogOut)
+
         {
+            Toast.makeText(this, "SignOut", Toast.LENGTH_SHORT).show();
+            showYesNoDialig();
 
         }
         return true;
+    }
+    public void showYesNoDialig()
+    {
+        //جهيز بناء شباك حوار بارمتر مؤشر للنشاط الحالي
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        builder.setTitle("Log out");//تحديد العنوان
+        builder.setMessage("Are you sure?");//تحدي فحوى شباك الحوار
+        //النض على الزر ومعالج الحدث
+        builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i)
+            {
+                //معالجة حدث للموافقة
+                Toast.makeText(MainActivityRestaurants.this, "Signing out", Toast.LENGTH_SHORT).show();
+                finish();
+
+
+            }
+        });
+        //النض على الزر ومعالج الحدث
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener()
+        {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //معالجة حدث للموافقة
+                Toast.makeText(MainActivityRestaurants.this, "Signing out", Toast.LENGTH_SHORT).show();
+            }
+        });
+        AlertDialog dialog=builder.create();//بناء شباك الحوار
+        dialog.show();//عرض الشباك
     }
 
 }

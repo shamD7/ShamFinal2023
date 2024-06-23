@@ -1,0 +1,15 @@
+@startuml
+class sham.dawod.shamfinal2023.addMeals {
+# void onCreate(Bundle)
++ void Add_And_Save_MEAL()
+}
+note left of sham.dawod.shamfinal2023.addMeals::Add_And_Save_MEAL()
+
+     * دالة لاضافة وجبة
+     
+end note
+
+
+
+androidx.appcompat.app.AppCompatActivity <|-- sham.dawod.shamfinal2023.addMeals
+@enduml

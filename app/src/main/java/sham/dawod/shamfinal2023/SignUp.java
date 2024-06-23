@@ -34,6 +34,7 @@ public class SignUp extends AppCompatActivity {
         btnSAVE = (Button) findViewById(R.id.btnSAVE);
         btnCancel = (Button) findViewById(R.id.btnCancel);}
 
+
     public void onClickSave(View v) {
         checkAndSignUP_FB();
     }
@@ -42,6 +43,11 @@ public class SignUp extends AppCompatActivity {
         finish();
     }
 
+    /**
+     *دالة لفحص البريد الاكتروني وكلمة المرور
+     *
+     * @return
+     */
     private void checkEmailPassw() {
         boolean isALLOK = true;// يحوي نتيجة فحص الحقول ان كانت سلمي
         //استخراج النص من حقل الايميل
@@ -92,6 +98,11 @@ public class SignUp extends AppCompatActivity {
 
         }
     }
+    /**
+     *دالة لفحص هل تسجيل الدخول صحيح وبناء حساب معfire base
+     *
+     * @return
+     */
         private void checkAndSignUP_FB()
         {
             boolean isALLOK1 = true;// يحوي نتيجة فحص الحقول ان كانت سلمي
@@ -159,6 +170,11 @@ public class SignUp extends AppCompatActivity {
 
             }
         }
+    /**
+     *دالة لحفظ الحساب معfire base
+     *
+     * @return
+     */
 
         private void saveUser_FB(String email ,String name, String phone ,String passw)
         {
