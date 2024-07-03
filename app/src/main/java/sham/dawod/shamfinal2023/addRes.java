@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import sham.dawod.shamfinal2023.data.AppDatabase;
+import sham.dawod.shamfinal2023.data.resTable.Restaurants;
+
 public class addRes extends AppCompatActivity
 {
     private TextView etRName;
@@ -62,13 +64,11 @@ public class addRes extends AppCompatActivity
 
                 AppDatabase db = AppDatabase.getDB(getApplicationContext());
                 //بناء مطعم جديد وتحديد صفاته
-                //Restaurants R=new Restaurants();
-                //
-                //Restaurants.text=textTask;
-                //Restaurants.shortTitle=subjText;
-                //Restaurants.subjId=subject.key_id; //تحديد رقم الموضوع للمهمة
-                //db.RestaurantQuery().insertAll(task);//اضافة مهمة للجدول
-                //finish();
+                Restaurants R=new Restaurants();
+                R.restName=Rname;
+                R.restPhonenum=Rphonenum;
+                R.restWorkHours=RworkHours;
+            finish();
 
 
         }

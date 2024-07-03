@@ -1,12 +1,20 @@
 package sham.dawod.shamfinal2023;
+import static java.security.AccessController.getContext;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.PermissionChecker;
+
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.GridView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -40,18 +48,19 @@ public class MainActivityRestaurants extends AppCompatActivity {
      *
      * @return
      */
+
+    public void onClickAddRes(View v) {
+        Intent i = new Intent(MainActivityRestaurants.this, addRes.class);
+        startActivity(i);
+    }
     public void readTaskFrom_FB() {
         //בניית רשימה ריקה
         ArrayList<Restaurants> arrayList = new ArrayList<>();
         //קבלת הפנייה למסד הנתונים
         FirebaseFirestore ffRef = FirebaseFirestore.getInstance();
-        //קישור לקבוצה collection שרוצים לקרוא
-        ffRef.collection("MyUsers").
-                document(FirebaseAuth.getInstance().getUid()).
-                collection("subjects").
-                document(spnrRes.getSelectedItem().toString()).
+        ffRef.collection("Restarurants").document(spnrRes.getSelectedItem().toString()).
                 //הוספת מאזין לקריאת הנתונים
-                        collection("Tasks").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                        collection("Restarurants").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     /**
                      * תגובה לאירוע השלמת קריאת הנתונים
                      * @param task הנתונים שהתקבלו מענן מסד הנתונים
@@ -131,6 +140,35 @@ public class MainActivityRestaurants extends AppCompatActivity {
         AlertDialog dialog=builder.create();//بناء شباك الحوار
         dialog.show();//عرض الشباك
     }
+
+    /**
+     * ביצוע שיחה למפסר טלפון
+     * todo הוספת הרשאה בקובץ המניפיסט
+     * <uses-permission android:name="android.permission.CALL_PHONE" />
+     * @param phone מספר טלפון שרוצים להתקשר אליו
+     */
+    private void callAPhoneNymber(String phone){
+        //בדיקה אם יש הרשאה לביצוע שיחה
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {//בדיקת גרסאות
+            //בדיקה אם ההרשאה לא אושרה בעבר
+            if (checkSelfPermission(getContext(),Manifest.permission.CALL_PHONE) == PermissionChecker.PERMISSION_DENIED) {
+                //רשימת ההרשאות שרוצים לבקש אישור
+                String[] permissions = {Manifest.permission.CALL_PHONE};
+                //בקשת אישור הרשאות (שולחים קוד הבקשה)
+                //התשובה תתקבל בפעולה onRequestPermissionsResult
+                requestPermissions((Activity) getContext(),permissions, 100);
+            }
+            else{
+                //אינטנט מרומז לפתיחת אפליקצית ההודות סמס
+                Intent phone_intent = new Intent(Intent.ACTION_CALL);
+                phone_intent.setData(Uri.parse("tel:" + phone));
+                getContext().startActivity(phone_intent);
+            }
+        }
+    }
+
+
+
 
 }
 

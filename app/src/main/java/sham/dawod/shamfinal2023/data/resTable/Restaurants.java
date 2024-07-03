@@ -16,7 +16,7 @@ public class Restaurants
     /**اسم المطعم*/
     public String restName;
     /**رقم هاتف المطعم */
-    public int restPhonenum;
+    public String restPhonenum;
     /**ساعات عمل المطعم */
     public String restWorkHours;
     /**منيو  المطعم */
