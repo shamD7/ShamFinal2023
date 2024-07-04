@@ -52,9 +52,11 @@ public class MyRestaurantAdapter extends ArrayAdapter<Restaurants> {
         TextView tvName =vitem.findViewById(R.id.tvResName);
         TextView tvResHours =vitem.findViewById(R.id.tvResHours);
         TextView tvResPhNum =vitem.findViewById(R.id.tvResPhNum);
+        TextView tvResLocation =vitem.findViewById(R.id.tvResLocation);
+
+
         ImageButton imgBtnGo=vitem.findViewById(R.id.imgBtnGo);
         ImageButton imgBtnCall=vitem.findViewById(R.id.imgBtnCallitm);
-        ImageButton imgBtnFav=vitem.findViewById(R.id.imgBtnFavorite);
         //
         Restaurants current=getItem(position);
         //
@@ -112,6 +114,16 @@ public class MyRestaurantAdapter extends ArrayAdapter<Restaurants> {
             }
         }
     }
+    public void onClickCall(View v) {
+
+
+
+
+    }
+
+
+
+
 
 
 

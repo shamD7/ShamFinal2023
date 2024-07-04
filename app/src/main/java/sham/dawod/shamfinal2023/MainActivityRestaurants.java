@@ -15,6 +15,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -26,6 +28,8 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
+import java.util.List;
+
 import sham.dawod.shamfinal2023.data.resTable.MyRestaurantAdapter;
 import sham.dawod.shamfinal2023.data.resTable.Restaurants;
 public class MainActivityRestaurants extends AppCompatActivity {
@@ -48,11 +52,13 @@ public class MainActivityRestaurants extends AppCompatActivity {
      *
      * @return
      */
-
-    public void onClickAddRes(View v) {
-        Intent i = new Intent(MainActivityRestaurants.this, addRes.class);
+    public  void onAddRes(View v) {
+        Intent i = new Intent(      MainActivityRestaurants.this, addRes.class);
         startActivity(i);
     }
+
+
+
     public void readTaskFrom_FB() {
         //בניית רשימה ריקה
         ArrayList<Restaurants> arrayList = new ArrayList<>();
@@ -141,31 +147,6 @@ public class MainActivityRestaurants extends AppCompatActivity {
         dialog.show();//عرض الشباك
     }
 
-    /**
-     * ביצוע שיחה למפסר טלפון
-     * todo הוספת הרשאה בקובץ המניפיסט
-     * <uses-permission android:name="android.permission.CALL_PHONE" />
-     * @param phone מספר טלפון שרוצים להתקשר אליו
-     */
-    private void callAPhoneNymber(String phone){
-        //בדיקה אם יש הרשאה לביצוע שיחה
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {//בדיקת גרסאות
-            //בדיקה אם ההרשאה לא אושרה בעבר
-            if (checkSelfPermission(getContext(),Manifest.permission.CALL_PHONE) == PermissionChecker.PERMISSION_DENIED) {
-                //רשימת ההרשאות שרוצים לבקש אישור
-                String[] permissions = {Manifest.permission.CALL_PHONE};
-                //בקשת אישור הרשאות (שולחים קוד הבקשה)
-                //התשובה תתקבל בפעולה onRequestPermissionsResult
-                requestPermissions((Activity) getContext(),permissions, 100);
-            }
-            else{
-                //אינטנט מרומז לפתיחת אפליקצית ההודות סמס
-                Intent phone_intent = new Intent(Intent.ACTION_CALL);
-                phone_intent.setData(Uri.parse("tel:" + phone));
-                getContext().startActivity(phone_intent);
-            }
-        }
-    }
 
 
 

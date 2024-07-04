@@ -19,8 +19,12 @@ public class Restaurants
     public String restPhonenum;
     /**ساعات عمل المطعم */
     public String restWorkHours;
-    /**منيو  المطعم */
-    public String restMenu;
+    /**موقع المطعم */
+
+    public String restLocation;
+
+    public String id ;
+    public String uid;
 
     @Override
     public String toString() {
@@ -28,11 +32,15 @@ public class Restaurants
                 "keyid=" + keyid +
                 ", image='" + image + '\'' +
                 ", restName='" + restName + '\'' +
-                ", restPhonenum=" + restPhonenum +
+                ", restPhonenum='" + restPhonenum + '\'' +
                 ", restWorkHours='" + restWorkHours + '\'' +
-                ", restMenu='" + restMenu + '\'' +
+                ", Location='" + restLocation + '\'' +
+                ", id='" + id + '\'' +
+                ", uid='" + uid + '\'' +
                 '}';
     }
+
+
     public String getImage() {
         return image;
     }
@@ -43,16 +51,49 @@ public class Restaurants
 
     public String getRestWorkHours() {return restWorkHours;}
 
-    public String getRestMenu() {return restMenu;}
-
-    public void setRestPhonenum(int restPhonenum) {
-        this.restPhonenum = restPhonenum;
-    }
-
-    public int getRestPhonenum() {
+    public String getRestPhonenum() {
         return restPhonenum;
     }
 
+    public String getRestLocation() {
+        return restLocation;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setRestLocation(String restLocation) {
+        this.restLocation = restLocation;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public void setRestName(String restName) {
+        this.restName = restName;
+    }
+
+    public void setRestPhonenum(String restPhonenum) {
+        this.restPhonenum = restPhonenum;
+    }
+
+    public void setRestWorkHours(String restWorkHours) {
+        this.restWorkHours = restWorkHours;
+    }
 }
 
 

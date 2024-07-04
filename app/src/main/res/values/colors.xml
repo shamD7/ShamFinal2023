@@ -7,4 +7,21 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="MyPrimaryDark">#0097A7</color>
+    <color name="MyPrimary">#00BCD4</color>
+    <color name="MyPrimaryLight">#B2EBF2</color>
+    <color name="MyPrimaryText">#212121</color>
+    <color name="MySeconderyText">#757575</color>
+    <color name="MyDividerColor">#BDBDBD</color>
+    <color name="MyTexrORIcon">#FFFFFF</color>
+
+
+
+
+
+
+
+
+
+
 </resources>
