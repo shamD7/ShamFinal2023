@@ -44,13 +44,11 @@ public class SignIn extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void onClickSignIn(View v)
-    {
-        checkEmailPassw_FB ();
+    public void onClickSignIn(View v) {
+        checkEmailPassw_FB();
     }
 
-    private void checkEmailPassw()
-    {
+    private void checkEmailPassw() {
         boolean isALLOK = true;// يحوي نتيجة فحص الحقول ان كانت سلمي
         //استخراج النص من حقل الايميل
         String email = etEmail.getText().toString();
@@ -93,7 +91,8 @@ public class SignIn extends AppCompatActivity {
             }
         }
     }
-    private void checkEmailPassw_FB (){
+
+    private void checkEmailPassw_FB() {
         boolean isALLOK = true;// يحوي نتيجة فحص الحقول ان كانت سلمي
         //استخراج النص من حقل الايميل
         String email = etEmail.getText().toString();
@@ -103,7 +102,7 @@ public class SignIn extends AppCompatActivity {
         if (email.length() < 6 || email.contains("@") == false)
         // تعديل المتغير ليدل على ان الفحص يعطي نتيجة خاطئة
         {
-            isALLOK= false;
+            isALLOK = false;
             //عرض ملاحظة خطأ على الشاشة داخل حقل البريد
             etEmail.setError("Wrong Email");
         }
@@ -135,25 +134,23 @@ public class SignIn extends AppCompatActivity {
             });
         }
     }
+
     @Override// بناء قائمة
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
+
     @Override //   معالجة حدث اختيار عنصر من القائمة
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        if (item.getItemId() == R.id.itmSettings)
-        {
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.itmSettings) {
 
         }
-        if (item.getItemId() == R.id.itmAddRes)
-        {
+        if (item.getItemId() == R.id.itmAddRes) {
             Intent i = new Intent(SignIn.this, MainActivityRestaurants.class);
             startActivity(i);
         }
-        if (item.getItemId() == R.id.itemLogOut)
-        {
+        if (item.getItemId() == R.id.itemLogOut) {
             Toast.makeText(this, "SignOut", Toast.LENGTH_SHORT).show();
             showYesNoDialig();
 
@@ -161,17 +158,15 @@ public class SignIn extends AppCompatActivity {
         return true;
     }
 
-    public void showYesNoDialig()
-    {
+    public void showYesNoDialig() {
         //جهيز بناء شباك حوار بارمتر مؤشر للنشاط الحالي
-        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Log out");//تحديد العنوان
         builder.setMessage("Are you sure?");//تحدي فحوى شباك الحوار
         //النض على الزر ومعالج الحدث
         builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialogInterface, int i)
-            {
+            public void onClick(DialogInterface dialogInterface, int i) {
                 //معالجة حدث للموافقة
                 Toast.makeText(SignIn.this, "Signing out", Toast.LENGTH_SHORT).show();
                 finish();
@@ -180,18 +175,18 @@ public class SignIn extends AppCompatActivity {
             }
         });
         //النض على الزر ومعالج الحدث
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener()
-        {
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 //معالجة حدث للموافقة
                 Toast.makeText(SignIn.this, "Signing out", Toast.LENGTH_SHORT).show();
             }
         });
-        AlertDialog dialog=builder.create();//بناء شباك الحوار
+        AlertDialog dialog = builder.create();//بناء شباك الحوار
         dialog.show();//عرض الشباك
     }
 }
+
 
 
 

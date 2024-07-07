@@ -6,10 +6,13 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -212,4 +215,51 @@ public class SignUp extends AppCompatActivity {
                 }
             });
         }
+
+
+    @Override //   معالجة حدث اختيار عنصر من القائمة
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.itmSettings) {
+
+        }
+        if (item.getItemId() == R.id.itmAddRes) {
+            Intent i = new Intent(SignUp.this, MainActivityRestaurants.class);
+            startActivity(i);
+        }
+        if (item.getItemId() == R.id.itemLogOut) {
+            Toast.makeText(this, "SignOut", Toast.LENGTH_SHORT).show();
+            showYesNoDialig();
+
+        }
+        return true;
+    }
+
+    public void showYesNoDialig() {
+        //جهيز بناء شباك حوار بارمتر مؤشر للنشاط الحالي
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Log out");//تحديد العنوان
+        builder.setMessage("Are you sure?");//تحدي فحوى شباك الحوار
+        //النض على الزر ومعالج الحدث
+        builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //معالجة حدث للموافقة
+                Toast.makeText(SignUp.this, "Signing out", Toast.LENGTH_SHORT).show();
+                finish();
+
+
+            }
+        });
+        //النض على الزر ومعالج الحدث
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //معالجة حدث للموافقة
+                Toast.makeText(SignUp.this, "Signing out", Toast.LENGTH_SHORT).show();
+            }
+        });
+        AlertDialog dialog = builder.create();//بناء شباك الحوار
+        dialog.show();//عرض الشباك
+    }
+
 }

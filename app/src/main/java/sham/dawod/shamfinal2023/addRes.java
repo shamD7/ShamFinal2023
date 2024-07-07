@@ -384,17 +384,15 @@ public class addRes extends AppCompatActivity
 
         return true;
     }
-    public void showYesNoDialig()
-    {
+    public void showYesNoDialig() {
         //جهيز بناء شباك حوار بارمتر مؤشر للنشاط الحالي
-        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Log out");//تحديد العنوان
         builder.setMessage("Are you sure?");//تحدي فحوى شباك الحوار
         //النض على الزر ومعالج الحدث
         builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialogInterface, int i)
-            {
+            public void onClick(DialogInterface dialogInterface, int i) {
                 //معالجة حدث للموافقة
                 Toast.makeText(addRes.this, "Signing out", Toast.LENGTH_SHORT).show();
                 finish();
@@ -403,18 +401,16 @@ public class addRes extends AppCompatActivity
             }
         });
         //النض على الزر ومعالج الحدث
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener()
-        {
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 //معالجة حدث للموافقة
                 Toast.makeText(addRes.this, "Signing out", Toast.LENGTH_SHORT).show();
             }
         });
-        AlertDialog dialog=builder.create();//بناء شباك الحوار
+        AlertDialog dialog = builder.create();//بناء شباك الحوار
         dialog.show();//عرض الشباك
     }
-
 
 
 

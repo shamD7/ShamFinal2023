@@ -46,6 +46,12 @@ public class MainActivityRestaurants extends AppCompatActivity {
         GridRes.setAdapter(ResAdapter);// ربط الوسيط بمركب مرئي لعرض مجموعة معطيات
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        readTaskFrom_FB();
+    }
+
     /**
      * قراءة معطيات من مبنى المعطيات
      * تسجيل المعطيات التي قرأناها من مبنى المعطيات
@@ -58,15 +64,14 @@ public class MainActivityRestaurants extends AppCompatActivity {
     }
 
 
-
     public void readTaskFrom_FB() {
         //בניית רשימה ריקה
         ArrayList<Restaurants> arrayList = new ArrayList<>();
         //קבלת הפנייה למסד הנתונים
         FirebaseFirestore ffRef = FirebaseFirestore.getInstance();
-        ffRef.collection("Restarurants").document(spnrRes.getSelectedItem().toString()).
+        ffRef.collection("MyRestaurants")
                 //הוספת מאזין לקריאת הנתונים
-                        collection("Restarurants").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                       .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     /**
                      * תגובה לאירוע השלמת קריאת הנתונים
                      * @param task הנתונים שהתקבלו מענן מסד הנתונים
@@ -87,6 +92,10 @@ public class MainActivityRestaurants extends AppCompatActivity {
                     }
                 });
     }
+
+
+
+
 
     @Override// بناء قائمة
 
@@ -116,17 +125,15 @@ public class MainActivityRestaurants extends AppCompatActivity {
         }
         return true;
     }
-    public void showYesNoDialig()
-    {
+    public void showYesNoDialig() {
         //جهيز بناء شباك حوار بارمتر مؤشر للنشاط الحالي
-        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Log out");//تحديد العنوان
         builder.setMessage("Are you sure?");//تحدي فحوى شباك الحوار
         //النض على الزر ومعالج الحدث
         builder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialogInterface, int i)
-            {
+            public void onClick(DialogInterface dialogInterface, int i) {
                 //معالجة حدث للموافقة
                 Toast.makeText(MainActivityRestaurants.this, "Signing out", Toast.LENGTH_SHORT).show();
                 finish();
@@ -135,15 +142,14 @@ public class MainActivityRestaurants extends AppCompatActivity {
             }
         });
         //النض على الزر ومعالج الحدث
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener()
-        {
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 //معالجة حدث للموافقة
                 Toast.makeText(MainActivityRestaurants.this, "Signing out", Toast.LENGTH_SHORT).show();
             }
         });
-        AlertDialog dialog=builder.create();//بناء شباك الحوار
+        AlertDialog dialog = builder.create();//بناء شباك الحوار
         dialog.show();//عرض الشباك
     }
 
