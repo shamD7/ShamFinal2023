@@ -259,7 +259,7 @@ public class addRes extends AppCompatActivity
                             }
                         }
                     })
-                    //הוספת מאזין שמציג מהו אחוז ההעלאה
+                    //إضافة مستمع يوضح نسبة التحميل
                     .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {

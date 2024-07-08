@@ -41,6 +41,14 @@ public class MyRestaurantAdapter extends ArrayAdapter<Restaurants> {
 
 
     }
+
+    /**
+     * בונה פריט גרפי אחד בהתאם לעיצוב והצגת נתוני העצם עליו
+     * @param position מיקום הפריט החל מ 0
+     * @param convertView
+     * @param parent  רכיב האוסף שיכיל את הפריטים כמו listview
+     * @return פריט גרפי שמציג נתוני עצם אחד
+     */
     public View getView (int position, @Nullable View convertView, @NonNull ViewGroup parent )
 
     {
@@ -53,9 +61,6 @@ public class MyRestaurantAdapter extends ArrayAdapter<Restaurants> {
         TextView tvResHours =vitem.findViewById(R.id.tvResHours);
         TextView tvResPhNum =vitem.findViewById(R.id.tvResPhNum);
         TextView tvResLocation =vitem.findViewById(R.id.tvResLocation);
-
-
-        ImageButton imgBtnGo=vitem.findViewById(R.id.imgBtnGo);
         ImageButton imgBtnCall=vitem.findViewById(R.id.imgBtnCallitm);
         //
         Restaurants current=getItem(position);
@@ -95,7 +100,7 @@ public class MyRestaurantAdapter extends ArrayAdapter<Restaurants> {
      * <uses-permission android:name="android.permission.CALL_PHONE" />
      * @param phone מספר טלפון שרוצים להתקשר אליו
      */
-    private void callAPhoneNymber(String phone){
+    private void callAPhoneNumber(String phone){
         //בדיקה אם יש הרשאה לביצוע שיחה
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {//בדיקת גרסאות
             //בדיקה אם ההרשאה לא אושרה בעבר
@@ -115,6 +120,9 @@ public class MyRestaurantAdapter extends ArrayAdapter<Restaurants> {
         }
     }
     public void onClickCall(View v) {
+
+
+
 
 
 
